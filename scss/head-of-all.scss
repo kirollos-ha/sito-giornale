@@ -1,0 +1,38 @@
+.logo-e-bottoncini {
+    .logo-in-mezzo {
+	display: flex;
+	justify-content: space-around;
+    }
+    .roba-sotto-logo {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	background-color:white;
+	.header-geo-date-info,
+	.header-lista-cose {
+	    a {
+		font-family: Calibri, 'Trebuchet MS', sans-serif;
+		color: black;
+		text-decoration: none;
+		padding: 2px;
+		font-size: 16px;
+	    }
+	}
+
+	.geo-date-info a {
+	    font-weight: normal;
+	}
+	.header-lista-cose a {
+	    font-weight: bold;
+	}
+	.header-lista-cose #hover-boi:hover {
+	    background-color: yellow;
+	}
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .logo-e-bottoncini {
+	display: none;
+    }
+}

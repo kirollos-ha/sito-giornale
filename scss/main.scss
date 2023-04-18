@@ -1,0 +1,21 @@
+@use "head-of-all";
+@use "linkbar";
+@use "sidebar";
+@use "sass:math";
+
+.outer {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: math.div(16, 16) * 100%;
+  }
+  > .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
