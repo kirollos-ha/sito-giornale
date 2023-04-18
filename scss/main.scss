@@ -1,8 +1,11 @@
 @use "head-of-all";
+@use "hover";
 @use "linkbar";
 @use "sidebar";
+@use "flex-sta";
 @use "sass:math";
 
+/* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {
   position: relative;
   &:before {

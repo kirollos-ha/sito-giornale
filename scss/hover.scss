@@ -1,0 +1,15 @@
+.hover-land .hover-contents {
+    display: none;
+    position: absolute;
+    /* test, se ammazza gli occhi di qualcuno va bene */
+    background-color: red;
+    color: navy;
+}
+
+.hover-land:hover .hover-contents {
+    display: flex;
+    flex-direction: column;
+    a {
+	min-width: 120px;
+    }
+}

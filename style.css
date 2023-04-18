@@ -8,6 +8,11 @@
   align-items: flex-end;
   background-color: white;
 }
+.logo-e-bottoncini .roba-sotto-logo .header-geo-date-info,
+.logo-e-bottoncini .roba-sotto-logo .header-lista-cose {
+  display: flex;
+  flex-wrap: nowrap;
+}
 .logo-e-bottoncini .roba-sotto-logo .header-geo-date-info a,
 .logo-e-bottoncini .roba-sotto-logo .header-lista-cose a {
   font-family: Calibri, "Trebuchet MS", sans-serif;
@@ -31,6 +36,22 @@
     display: none;
   }
 }
+.hover-land .hover-contents {
+  display: none;
+  position: absolute;
+  /* test, se ammazza gli occhi di qualcuno va bene */
+  background-color: red;
+  color: navy;
+}
+
+.hover-land:hover .hover-contents {
+  display: flex;
+  flex-direction: column;
+}
+.hover-land:hover .hover-contents a {
+  min-width: 120px;
+}
+
 .linkbar {
   display: flex;
   justify-content: space-between;
@@ -111,6 +132,38 @@
   margin-left: 50px;
 }
 
+.flex-che-ci-sta {
+  display: flex;
+}
+.flex-che-ci-sta .this-just-in {
+  flex-basis: 130px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+.flex-che-ci-sta .this-just-in a {
+  color: red;
+  text-decoration: none;
+}
+.flex-che-ci-sta .hic-sunt-contenutos {
+  flex-basis: 450px;
+  flex-grow: 3;
+  background-color: yellow;
+}
+.flex-che-ci-sta .spam-a-lato {
+  flex-basis: 120px;
+  flex-grow: 1;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-che-ci-sta .spam-a-lato a {
+  text-decoration: none;
+}
+
+/* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {
   position: relative;
 }

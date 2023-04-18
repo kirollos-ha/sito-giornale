@@ -1,0 +1,31 @@
+.flex-che-ci-sta {
+    display: flex;
+    .this-just-in {
+	flex-basis: 130px;
+	flex-grow: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: blue;
+	a {
+	    color: red;
+	    text-decoration: none;
+	}
+    }
+    .hic-sunt-contenutos {
+	flex-basis: 450px;
+	flex-grow: 3;
+	background-color: yellow;
+    }
+    .spam-a-lato {
+	flex-basis: 120px;
+	flex-grow: 1;
+	background-color: orange;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	a {
+	    text-decoration: none;
+	}
+    }
+}
