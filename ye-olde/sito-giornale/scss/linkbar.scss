@@ -1,0 +1,55 @@
+.linkbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    background-color: black;
+
+    .spam-angolino, .social-angolino {
+	display: flex;
+	align-items: center; /* per non far volare bottoni */
+    }
+
+    .spam-angolino {
+	justify-content: flex-start;
+    }
+
+    .social-angolino {
+	justify-content: flex-end;
+    }
+	
+    a {
+	font-family: sans-serif;
+	color: white;
+	text-decoration: none;
+	border-style: solid;
+	padding: 8px;
+	margin: 3px;
+	border-width: 2px;
+	border-radius: 5px;
+    }
+
+    a:hover {
+	color: black;
+	background-color: white;
+
+    }
+
+    #openbtn {
+	border-style: none;
+	font-size: large;
+    }
+
+    .social-link-icon {
+	filter: invert(1);
+	border-style: none;
+	img {
+	    height: 35px;
+	    width: 35px;
+	}
+    }
+
+    .social-link-icon:hover {
+	filter: invert(0);
+    }
+}

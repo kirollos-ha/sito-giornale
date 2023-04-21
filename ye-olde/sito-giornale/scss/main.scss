@@ -1,0 +1,24 @@
+@use "head-of-all";
+@use "hover";
+@use "linkbar";
+@use "sidebar";
+@use "flex-sta";
+@use "sass:math";
+
+/* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
+.outer {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: math.div(16, 16) * 100%;
+  }
+  > .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

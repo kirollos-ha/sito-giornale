@@ -1,0 +1,184 @@
+.logo-e-bottoncini .logo-in-mezzo {
+  display: flex;
+  justify-content: space-around;
+}
+.logo-e-bottoncini .roba-sotto-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: white;
+}
+.logo-e-bottoncini .roba-sotto-logo .header-geo-date-info,
+.logo-e-bottoncini .roba-sotto-logo .header-lista-cose {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.logo-e-bottoncini .roba-sotto-logo .header-geo-date-info a,
+.logo-e-bottoncini .roba-sotto-logo .header-lista-cose a {
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+  text-decoration: none;
+  padding: 2px;
+  font-size: 16px;
+}
+.logo-e-bottoncini .roba-sotto-logo .geo-date-info a {
+  font-weight: normal;
+}
+.logo-e-bottoncini .roba-sotto-logo .header-lista-cose a {
+  font-weight: bold;
+}
+.logo-e-bottoncini .roba-sotto-logo .header-lista-cose #hover-boi:hover {
+  background-color: yellow;
+}
+
+@media only screen and (max-width: 800px) {
+  .logo-e-bottoncini {
+    display: none;
+  }
+}
+.hover-land .hover-contents {
+  display: none;
+  position: absolute;
+  /* test, se ammazza gli occhi di qualcuno va bene */
+  background-color: red;
+  color: navy;
+}
+
+.hover-land:hover .hover-contents {
+  display: flex;
+  flex-direction: column;
+}
+.hover-land:hover .hover-contents a {
+  min-width: 120px;
+}
+
+.linkbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+}
+.linkbar .spam-angolino, .linkbar .social-angolino {
+  display: flex;
+  align-items: center; /* per non far volare bottoni */
+}
+.linkbar .spam-angolino {
+  justify-content: flex-start;
+}
+.linkbar .social-angolino {
+  justify-content: flex-end;
+}
+.linkbar a {
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  border-style: solid;
+  padding: 8px;
+  margin: 3px;
+  border-width: 2px;
+  border-radius: 5px;
+}
+.linkbar a:hover {
+  color: black;
+  background-color: white;
+}
+.linkbar #openbtn {
+  border-style: none;
+  font-size: large;
+}
+.linkbar .social-link-icon {
+  filter: invert(1);
+  border-style: none;
+}
+.linkbar .social-link-icon img {
+  height: 35px;
+  width: 35px;
+}
+.linkbar .social-link-icon:hover {
+  filter: invert(0);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0; /* bottone fa toggle tra 0 e 250 */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.2s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.flex-che-ci-sta {
+  display: flex;
+}
+.flex-che-ci-sta .this-just-in {
+  flex-basis: 130px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+.flex-che-ci-sta .this-just-in a {
+  color: red;
+  text-decoration: none;
+}
+.flex-che-ci-sta .hic-sunt-contenutos {
+  flex-basis: 450px;
+  flex-grow: 3;
+  background-color: yellow;
+}
+.flex-che-ci-sta .spam-a-lato {
+  flex-basis: 120px;
+  flex-grow: 1;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-che-ci-sta .spam-a-lato a {
+  text-decoration: none;
+}
+
+/* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
+.outer {
+  position: relative;
+}
+.outer:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.outer > .inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
