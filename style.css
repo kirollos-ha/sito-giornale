@@ -1,3 +1,29 @@
+@import url("https://fonts.cdnfonts.com/css/gotenborg-fraktur");
+@import url("https://fonts.cdnfonts.com/css/poppl-fraktur-cat");
+@import url("https://fonts.cdnfonts.com/css/kleist-fraktur");
+.avviso {
+  width: 100%;
+  background-color: darkorange;
+  font-family: "GotenborgFraktur", sans-serif;
+}
+.avviso h1 {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 40pt;
+}
+.avviso p {
+  font-weight: lighter;
+}
+.avviso a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+.avviso a:hover {
+  font-weight: bolder;
+  background-color: rgb(200, 200, 0);
+}
+
 .logo-e-bottoncini .logo-in-mezzo {
   display: flex;
   justify-content: space-around;
@@ -169,11 +195,12 @@
 
 .this-just-in {
   display: flex;
-  flex-direction: column;
   background-color: white;
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
+  margin: 4px;
+  flex-direction: column;
 }
 .this-just-in h3 {
   color: black;
@@ -189,21 +216,31 @@
 }
 
 .spam-a-lato {
-  background-color: orange;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .spam-a-lato a {
   text-decoration: none;
+  color: black;
+}
+.spam-a-lato a:hover {
+  color: white;
+  background-color: black;
 }
 
 .hic-sunt-contenutos {
-  background-color: yellow;
+  background-color: white;
 }
 
 .hic-sunt-contenutos .cima-de-griglia {
   display: grid;
+  margin: 4px;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   column-gap: 4px;
@@ -211,7 +248,11 @@
   background-color: white;
 }
 .hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso {
-  background-color: blue;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 0;
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 3;
@@ -219,7 +260,11 @@
   aspect-ratio: 4/3;
 }
 .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
-  background-color: purple;
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 0;
   aspect-ratio: 4/3;
 }
 
@@ -231,19 +276,38 @@
 }
 .hic-sunt-contenutos .griglia-minore-con-tutto {
   display: grid;
+  row-gap: 5px;
+  column-gap: 5px;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 5px;
 }
 .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
+  background-color: lightgray;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 0;
   aspect-ratio: 4/3;
 }
 
-/*
-@media screen and (max-width:base-vars.$width-poco-stretta) {
-    .hic-sunt-contenutos .griglia-minore-con-tutto {
-
-    }
+@media screen and (max-width: 800px) {
+  .hic-sunt-contenutos .griglia-minore-con-tutto {
+    grid-template-columns: 1fr;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
+    height: 100px;
+    width: 100%;
+  }
 }
-*/
+@media screen and (max-width: 600px) {
+  .hic-sunt-contenutos .griglia-minore-con-tutto {
+    grid-template-columns: 1fr;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
+    height: 80px;
+    width: 100%;
+  }
+}
 /* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {
   position: relative;

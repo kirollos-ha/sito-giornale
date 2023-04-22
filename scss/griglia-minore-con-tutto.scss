@@ -1,17 +1,34 @@
 @use "base-vars";
+@use "placehold-box";
 
 .hic-sunt-contenutos .griglia-minore-con-tutto {
     display: grid;
+    row-gap: 5px;
+    column-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 5px;
     .articolo-di-quelli {
+	@include placehold-box.placehold-box($color:lightgray, $margin: 0);
 	aspect-ratio: 4/3;
     }
 }
 
-/*
 @media screen and (max-width:base-vars.$width-poco-stretta) {
     .hic-sunt-contenutos .griglia-minore-con-tutto {
-
+	grid-template-columns: 1fr;
+	.articolo-di-quelli {
+	    height: 100px;
+	    width: 100%;
+	}
     }
 }
-*/
+
+@media screen and (max-width:base-vars.$width-molto-stretta) {
+    .hic-sunt-contenutos .griglia-minore-con-tutto {
+	grid-template-columns: 1fr;
+	.articolo-di-quelli {
+	    height: 80px;
+	    width: 100%;
+	}
+    }
+}

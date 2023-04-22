@@ -1,14 +1,16 @@
 @use "base-vars";
+@use "placehold-box";
 
 .hic-sunt-contenutos .cima-de-griglia {
     display: grid;
+    margin: 4px;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4px;
     row-gap: 4px;
     background-color: white;
     .coso-quello-grosso {
-	background-color: blue;
+	@include placehold-box.placehold-box($color: lightgreen, $margin: 0);
 	grid-row-start: 1;
 	grid-column-start: 1;
 	grid-row-end: 3;
@@ -16,11 +18,10 @@
 	aspect-ratio: 4 / 3;
     }
     .altro-meno-grosso {
-	background-color: purple;
+	@include placehold-box.placehold-box($color: lightblue, $margin: 0);
 	aspect-ratio: 4 / 3;
     }
-    .coso-quello-grosso, .altro-meno-grosso {
-    }
+}
 
 @media screen and (max-width:base-vars.$width-poco-stretta) {
     .hic-sunt-contenutos .cima-de-griglia {

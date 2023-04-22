@@ -1,0 +1,25 @@
+@import url('https://fonts.cdnfonts.com/css/gotenborg-fraktur');
+@import url('https://fonts.cdnfonts.com/css/poppl-fraktur-cat');
+@import url('https://fonts.cdnfonts.com/css/kleist-fraktur');
+.avviso {
+    width: 100%;
+    background-color: darkorange;
+    font-family: 'GotenborgFraktur', sans-serif;
+    h1 {
+	font-weight: lighter;
+	text-align: center;
+	font-size: 40pt;
+    }
+    p {
+	font-weight: lighter;
+    }
+    a {
+	color: blue;
+	text-decoration: none;
+	font-weight: bold;
+    }
+    a:hover {
+	font-weight: bolder;
+	background-color: rgb(200,200,00);
+    }
+}

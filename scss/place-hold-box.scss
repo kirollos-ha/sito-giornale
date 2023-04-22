@@ -1,0 +1,8 @@
+@mixin placehold-box($color: white, $margin:4px) {
+    background-color: $color;
+    box-shadow: 0 0 1px rgba(127, 127, 127, .25);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: $margin;
+}
