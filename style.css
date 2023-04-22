@@ -51,6 +51,9 @@
 .hover-land:hover .hover-contents a {
   min-width: 120px;
 }
+.hover-land:hover .hover-contents a:hover {
+  background-color: yellow;
+}
 
 .linkbar {
   display: flex;
@@ -134,35 +137,113 @@
 
 .flex-che-ci-sta {
   display: flex;
+  flex-direction: row;
+  /* qui metto solo quanto riguarda
+   * la flexboxaggine
+   * quanto di pertinente al singolo elem.
+   * va nell'apposito scss */
 }
 .flex-che-ci-sta .this-just-in {
-  flex-basis: 130px;
-  flex-grow: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: blue;
-}
-.flex-che-ci-sta .this-just-in a {
-  color: red;
-  text-decoration: none;
+  flex-basis: 120px;
+  flex-grow: 1;
 }
 .flex-che-ci-sta .hic-sunt-contenutos {
   flex-basis: 450px;
   flex-grow: 3;
-  background-color: yellow;
 }
 .flex-che-ci-sta .spam-a-lato {
   flex-basis: 120px;
   flex-grow: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .flex-che-ci-sta .this-just-in {
+    display: none;
+  }
+}
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px;
+}
+
+.this-just-in {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+}
+.this-just-in h3 {
+  color: black;
+}
+.this-just-in a {
+  padding: 3px;
+  color: black;
+  text-decoration: none;
+}
+.this-just-in a:hover {
+  color: white;
+  background-color: black;
+}
+
+.spam-a-lato {
   background-color: orange;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.flex-che-ci-sta .spam-a-lato a {
+.spam-a-lato a {
   text-decoration: none;
 }
 
+.hic-sunt-contenutos {
+  background-color: yellow;
+}
+
+.hic-sunt-contenutos .cima-de-griglia {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4px;
+  row-gap: 4px;
+  background-color: white;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso {
+  background-color: blue;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  aspect-ratio: 4/3;
+}
+.hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
+  background-color: purple;
+  aspect-ratio: 4/3;
+}
+
+@media screen and (max-width: 800px) {
+  .hic-sunt-contenutos .cima-de-griglia {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.hic-sunt-contenutos .griglia-minore-con-tutto {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
+  aspect-ratio: 4/3;
+}
+
+/*
+@media screen and (max-width:base-vars.$width-poco-stretta) {
+    .hic-sunt-contenutos .griglia-minore-con-tutto {
+
+    }
+}
+*/
 /* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {
   position: relative;

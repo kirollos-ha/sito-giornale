@@ -1,0 +1,17 @@
+@use "base-vars";
+
+.hic-sunt-contenutos .griglia-minore-con-tutto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .articolo-di-quelli {
+	aspect-ratio: 4/3;
+    }
+}
+
+/*
+@media screen and (max-width:base-vars.$width-poco-stretta) {
+    .hic-sunt-contenutos .griglia-minore-con-tutto {
+
+    }
+}
+*/

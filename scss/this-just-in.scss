@@ -1,0 +1,23 @@
+@use "base-vars";
+
+.this-just-in {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 4px;
+    h3 {
+	color: black;
+    }
+    a {
+	padding: 3px;
+	color: black;
+	text-decoration: none;
+    }
+    a:hover {
+	color:white;
+	background-color: black;
+    }
+}

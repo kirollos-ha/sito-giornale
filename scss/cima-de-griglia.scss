@@ -1,0 +1,30 @@
+@use "base-vars";
+
+.hic-sunt-contenutos .cima-de-griglia {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4px;
+    row-gap: 4px;
+    background-color: white;
+    .coso-quello-grosso {
+	background-color: blue;
+	grid-row-start: 1;
+	grid-column-start: 1;
+	grid-row-end: 3;
+	grid-column-end: 3;
+	aspect-ratio: 4 / 3;
+    }
+    .altro-meno-grosso {
+	background-color: purple;
+	aspect-ratio: 4 / 3;
+    }
+    .coso-quello-grosso, .altro-meno-grosso {
+    }
+
+@media screen and (max-width:base-vars.$width-poco-stretta) {
+    .hic-sunt-contenutos .cima-de-griglia {
+	grid-template-rows: repeat(3, 1fr) ;
+	grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -3,7 +3,18 @@
 @use "linkbar";
 @use "sidebar";
 @use "flex-sta";
+@use "footer";
+
+@use "this-just-in";
+
+@use "spam-a-lato";
+
+@use "contenutos";
+@use "cima-de-griglia";
+@use "griglia-minore-con-tutto";
+
 @use "sass:math";
+
 
 /* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {

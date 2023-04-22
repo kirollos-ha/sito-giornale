@@ -1,31 +1,30 @@
+@use "base-vars";
+
 .flex-che-ci-sta {
     display: flex;
+    flex-direction: row;
+    /* qui metto solo quanto riguarda
+     * la flexboxaggine
+     * quanto di pertinente al singolo elem.
+     * va nell'apposito scss */
     .this-just-in {
-	flex-basis: 130px;
-	flex-grow: 0;
-	display: flex;
-	flex-direction: column;
-	background-color: blue;
-	a {
-	    color: red;
-	    text-decoration: none;
-	}
+	flex-basis: 120px;
+	flex-grow: 1;
     }
     .hic-sunt-contenutos {
 	flex-basis: 450px;
 	flex-grow: 3;
-	background-color: yellow;
     }
     .spam-a-lato {
 	flex-basis: 120px;
 	flex-grow: 1;
-	background-color: orange;
+    }
+}
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	a {
-	    text-decoration: none;
+@media screen and (max-width:base-vars.$width-poco-stretta) {
+    .flex-che-ci-sta {
+	.this-just-in {
+	    display: none;
 	}
     }
 }
