@@ -1,0 +1,57 @@
+/*
+ * grazie mille safari perchè mo' non posso usare aspect-ratio come una persona normale
+ * grazie mille per tutto sto disaccoppiamento
+ * guarda propio non mi serviva
+ * (e grazie mille ratiobuddy.com)
+ */
+
+.4-3-ratio-wrapper {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (3 / 4) * 100%;
+  }
+  .wrapped {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.16-9-ratio-wrapper {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (9 / 16) * 100%;
+  }
+  .wrapped {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.1-1-ratio-wrapper {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+  }
+  .wrapped {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

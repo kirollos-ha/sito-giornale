@@ -1,0 +1,22 @@
+/* vorrei dedicare questo file al browser safari e all'engine webkit 
+ * e a tutti quei santi che hanno risposto a
+ * https://stackoverflow.com/questions/68886003/css-aspect-ratio-not-working-in-safari-browser
+ */
+
+@mixin safari-plz {
+    aspect-ratio: 16/9;
+    // Fallback
+    @supports not (aspect-ratio: 16 / 9) {
+    &::before {
+      float: left;
+      padding-top: 56.25%;
+      content: "";
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}   

@@ -1,5 +1,6 @@
 @use "base-vars";
 @use "placehold-box";
+@use "ratio-mixin";
 
 .hic-sunt-contenutos .griglia-minore-con-tutto {
     display: grid;
@@ -8,18 +9,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     margin: 5px;
     .articolo-di-quelli {
-	@include placehold-box.placehold-box($color:lightgray, $margin: 0);
-	aspect-ratio: 4/3;
-    }
-}
-
-@media screen and (max-width:base-vars.$width-poco-stretta) {
-    .hic-sunt-contenutos .griglia-minore-con-tutto {
-	grid-template-columns: 1fr;
-	.articolo-di-quelli {
-	    height: 100px;
-	    width: 100%;
-	}
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+        h3 {
+            font-size: large;
+        }
     }
 }
 
@@ -27,8 +23,23 @@
     .hic-sunt-contenutos .griglia-minore-con-tutto {
 	grid-template-columns: 1fr;
 	.articolo-di-quelli {
-	    height: 80px;
+	    height: 100px;
 	    width: 100%;
+	    border-style: solid;
+	    border-color: solid;
+	    border-width: 2px;
+	    display: flex;
+	    img {
+		flex-basis: 80px;
+		flex-grow: 0;
+		height: 100%;
+		// width: auto;
+	    }
+	    h3 {
+		flex-basis: 100px;
+		flex-grow: 1;
+		font-size: large;
+	    }
 	}
     }
 }

@@ -1,0 +1,18 @@
+
+.riga-articoli {
+  .header-riga-articoli h3::before {
+      content: "Kentaro Miura";
+      color: white;
+      background-image: url("imagos/svg/file.svg");
+      // background-size: 300px 10px;
+      height: 300px;
+      width: 300px;
+  }
+  .body-riga-articoli {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    img {
+      width: 100%;
+    }
+  }
+}

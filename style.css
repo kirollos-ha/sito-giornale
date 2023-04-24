@@ -274,6 +274,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* vorrei dedicare questo file al browser safari e all'engine webkit 
+ * e a tutti quei santi che hanno risposto a
+ * https://stackoverflow.com/questions/68886003/css-aspect-ratio-not-working-in-safari-browser
+ */
 .hic-sunt-contenutos .griglia-minore-con-tutto {
   display: grid;
   row-gap: 5px;
@@ -281,33 +285,52 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin: 5px;
 }
-.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
-  background-color: lightgray;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 0;
-  aspect-ratio: 4/3;
+.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
+  width: 100%;
+  object-fit: cover;
+}
+.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
+  font-size: large;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .hic-sunt-contenutos .griglia-minore-con-tutto {
     grid-template-columns: 1fr;
   }
   .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
     height: 100px;
     width: 100%;
+    border-style: solid;
+    border-color: solid;
+    border-width: 2px;
+    display: flex;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
+    flex-basis: 80px;
+    flex-grow: 0;
+    height: 100%;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
+    flex-basis: 100px;
+    flex-grow: 1;
+    font-size: large;
   }
 }
-@media screen and (max-width: 600px) {
-  .hic-sunt-contenutos .griglia-minore-con-tutto {
-    grid-template-columns: 1fr;
-  }
-  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
-    height: 80px;
-    width: 100%;
-  }
+.riga-articoli .header-riga-articoli h3::before {
+  content: "Kentaro Miura";
+  color: white;
+  background-image: url("imagos/svg/file.svg");
+  height: 300px;
+  width: 300px;
 }
+.riga-articoli .body-riga-articoli {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.riga-articoli .body-riga-articoli img {
+  width: 100%;
+}
+
 /* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
 .outer {
   position: relative;
