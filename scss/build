@@ -1,3 +1,22 @@
 #!/usr/bin/bash
 
-sass main.scss ../style.css
+# Questo script è stato creato ai soli fini di non dover usare
+# un build system per scss
+# garantisco che ne è valsa la pena, che awk è molto più semplice
+# (la cosa non era un complimento a awk)
+
+# variabili per lo script, posizione e nomi dei file
+# si modifichi a gusto e piacimento dell'utente
+scss_dir="$HOME/git/sito-giornale/scss"
+css_dir="$HOME/git/sito-giornale"
+main_css="$css_dir/style.css"
+
+# genera file principale
+ls "$scss_dir" |\
+  awk -F. 'NF==2 && $1!="main" { printf "@use\"%s\";\n", $1 }'\
+  > "$scss_dir/main.scss"
+
+echo "generated (probably)"
+
+# compila file principale
+sass "$scss_dir/main.scss" "$main_css" && echo "compiled successfully"

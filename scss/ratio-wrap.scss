@@ -1,0 +1,62 @@
+.wrap-16-9 {
+    position: relative;
+    &:before {
+	display: block;
+	height: 0;
+	content: "";
+	padding-top: calc((9 / 16) * 100%);
+    }
+    .inner {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+    }
+}
+
+
+.wrap-4-3 {
+    position: relative;
+    &:before {
+	display: block;
+	height: 0;
+	content: "";
+	padding-top: calc((3 / 4) * 100%);
+    }
+    .inner {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+    }
+}
+
+.wrap-square {
+    position: relative;
+    &:before {
+	display: block;
+	height: 0;
+	content: "";
+	padding-top: 100%;
+    }
+    .inner {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+    }
+}

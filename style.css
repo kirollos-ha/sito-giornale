@@ -24,6 +24,124 @@
   background-color: rgb(200, 200, 0);
 }
 
+body {
+  font-family: "Helvetica", sans-serif;
+}
+
+.hic-sunt-contenutos .cima-de-griglia {
+  display: grid;
+  margin: 4px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4px;
+  row-gap: 4px;
+  background-color: white;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso {
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 0;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  aspect-ratio: 4/3;
+}
+.hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 0;
+  aspect-ratio: 4/3;
+}
+
+@media screen and (max-width: 800px) {
+  .hic-sunt-contenutos .cima-de-griglia {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.hic-sunt-contenutos {
+  background-color: white;
+}
+
+.flex-che-ci-sta {
+  display: flex;
+  flex-direction: row;
+  /* qui metto solo quanto riguarda
+   * la flexboxaggine
+   * quanto di pertinente al singolo elem.
+   * va nell'apposito scss */
+}
+.flex-che-ci-sta .this-just-in {
+  flex-basis: 120px;
+  flex-grow: 1;
+}
+.flex-che-ci-sta .hic-sunt-contenutos {
+  flex-basis: 450px;
+  flex-grow: 3;
+}
+.flex-che-ci-sta .spam-a-lato {
+  flex-basis: 120px;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .flex-che-ci-sta .this-just-in {
+    display: none;
+  }
+}
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px;
+}
+
+/* vorrei dedicare questo file al browser safari e all'engine webkit 
+ * e a tutti quei santi che hanno risposto a
+ * https://stackoverflow.com/questions/68886003/css-aspect-ratio-not-working-in-safari-browser
+ */
+.hic-sunt-contenutos .griglia-minore-con-tutto {
+  display: grid;
+  row-gap: 5px;
+  column-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 5px;
+}
+.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
+  width: 100%;
+  object-fit: cover;
+}
+.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
+  font-size: large;
+}
+
+@media screen and (max-width: 600px) {
+  .hic-sunt-contenutos .griglia-minore-con-tutto {
+    grid-template-columns: 1fr;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
+    height: 100px;
+    width: 100%;
+    border-style: solid;
+    border-color: solid;
+    border-width: 2px;
+    display: flex;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
+    flex-basis: 80px;
+    flex-grow: 0;
+    height: 100%;
+  }
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
+    flex-basis: 100px;
+    flex-grow: 1;
+    font-size: large;
+  }
+}
 .logo-e-bottoncini .logo-in-mezzo {
   display: flex;
   justify-content: space-around;
@@ -127,6 +245,83 @@
   filter: invert(0);
 }
 
+.wrap-16-9 {
+  position: relative;
+}
+.wrap-16-9:before {
+  display: block;
+  height: 0;
+  content: "";
+  padding-top: 56.25%;
+}
+.wrap-16-9 .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.wrap-4-3 {
+  position: relative;
+}
+.wrap-4-3:before {
+  display: block;
+  height: 0;
+  content: "";
+  padding-top: 75%;
+}
+.wrap-4-3 .inner {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.wrap-square {
+  position: relative;
+}
+.wrap-square:before {
+  display: block;
+  height: 0;
+  content: "";
+  padding-top: 100%;
+}
+.wrap-square .inner {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.riga-articoli .header-riga-articoli h3::before {
+  content: "Kentaro Miura";
+  color: white;
+  background-image: url("imagos/svg/file.svg");
+  height: 300px;
+  width: 300px;
+}
+.riga-articoli .body-riga-articoli {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.riga-articoli .body-riga-articoli img {
+  width: 100%;
+}
+
 .sidebar {
   height: 100%;
   width: 0; /* bottone fa toggle tra 0 e 250 */
@@ -161,36 +356,23 @@
   margin-left: 50px;
 }
 
-.flex-che-ci-sta {
+.spam-a-lato {
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 4px;
   display: flex;
-  flex-direction: row;
-  /* qui metto solo quanto riguarda
-   * la flexboxaggine
-   * quanto di pertinente al singolo elem.
-   * va nell'apposito scss */
+  flex-direction: column;
+  align-items: center;
 }
-.flex-che-ci-sta .this-just-in {
-  flex-basis: 120px;
-  flex-grow: 1;
+.spam-a-lato a {
+  text-decoration: none;
+  color: black;
 }
-.flex-che-ci-sta .hic-sunt-contenutos {
-  flex-basis: 450px;
-  flex-grow: 3;
-}
-.flex-che-ci-sta .spam-a-lato {
-  flex-basis: 120px;
-  flex-grow: 1;
-}
-
-@media screen and (max-width: 800px) {
-  .flex-che-ci-sta .this-just-in {
-    display: none;
-  }
-}
-.footer {
-  background-color: black;
+.spam-a-lato a:hover {
   color: white;
-  padding: 50px;
+  background-color: black;
 }
 
 .this-just-in {
@@ -213,140 +395,6 @@
 .this-just-in a:hover {
   color: white;
   background-color: black;
-}
-
-.spam-a-lato {
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.spam-a-lato a {
-  text-decoration: none;
-  color: black;
-}
-.spam-a-lato a:hover {
-  color: white;
-  background-color: black;
-}
-
-.hic-sunt-contenutos {
-  background-color: white;
-}
-
-.hic-sunt-contenutos .cima-de-griglia {
-  display: grid;
-  margin: 4px;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 4px;
-  row-gap: 4px;
-  background-color: white;
-}
-.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso {
-  background-color: lightgreen;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 0;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-row-end: 3;
-  grid-column-end: 3;
-  aspect-ratio: 4/3;
-}
-.hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
-  background-color: lightblue;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 0;
-  aspect-ratio: 4/3;
-}
-
-@media screen and (max-width: 800px) {
-  .hic-sunt-contenutos .cima-de-griglia {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* vorrei dedicare questo file al browser safari e all'engine webkit 
- * e a tutti quei santi che hanno risposto a
- * https://stackoverflow.com/questions/68886003/css-aspect-ratio-not-working-in-safari-browser
- */
-.hic-sunt-contenutos .griglia-minore-con-tutto {
-  display: grid;
-  row-gap: 5px;
-  column-gap: 5px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 5px;
-}
-.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
-  width: 100%;
-  object-fit: cover;
-}
-.hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
-  font-size: large;
-}
-
-@media screen and (max-width: 600px) {
-  .hic-sunt-contenutos .griglia-minore-con-tutto {
-    grid-template-columns: 1fr;
-  }
-  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
-    height: 100px;
-    width: 100%;
-    border-style: solid;
-    border-color: solid;
-    border-width: 2px;
-    display: flex;
-  }
-  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
-    flex-basis: 80px;
-    flex-grow: 0;
-    height: 100%;
-  }
-  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
-    flex-basis: 100px;
-    flex-grow: 1;
-    font-size: large;
-  }
-}
-.riga-articoli .header-riga-articoli h3::before {
-  content: "Kentaro Miura";
-  color: white;
-  background-image: url("imagos/svg/file.svg");
-  height: 300px;
-  width: 300px;
-}
-.riga-articoli .body-riga-articoli {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.riga-articoli .body-riga-articoli img {
-  width: 100%;
-}
-
-/* copiato da https://ratiobuddy.com/ sperando di poterlo usare, temo sia troppo tardi */
-.outer {
-  position: relative;
-}
-.outer:before {
-  display: block;
-  content: "";
-  width: 100%;
-  padding-top: 100%;
-}
-.outer > .inner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
