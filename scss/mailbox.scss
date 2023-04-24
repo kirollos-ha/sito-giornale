@@ -1,0 +1,28 @@
+/* grazie mille a
+ * https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+ * per tutto il codice che ti ho fottuto
+ */
+.dame-tu-mail {
+  width: 100%;
+  max-width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  .corpus-dame-tu {
+    display: flex;
+    flex-wrap: wrap;
+    .name {
+      flex-grow: 1;
+      flex-basis: 60px;
+    }
+    .email {
+      flex-grow: 3;
+      flex-basis: 90px;
+    }
+    button {
+      flex-grow: 1;
+      flex-basis:70px;
+      background-color: lightgreen;
+    }
+  }
+}

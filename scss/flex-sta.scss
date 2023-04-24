@@ -8,20 +8,23 @@
      * quanto di pertinente al singolo elem.
      * va nell'apposito scss */
     .this-just-in {
-	flex-basis: 120px;
+	flex-basis: 200px;
 	flex-grow: 1;
+	flex-shrink: 1;
     }
     .hic-sunt-contenutos {
-	flex-basis: 450px;
+	flex-basis: 360;
 	flex-grow: 3;
+	flex-shrink: 2;
     }
     .spam-a-lato {
-	flex-basis: 120px;
-	flex-grow: 1;
+	flex-basis: 240;
+	flex-grow: 2;
+	flex-shrink: 1;
     }
 }
 
-@media screen and (max-width:base-vars.$width-poco-stretta) {
+@media screen and (max-width:base-vars.$width-inizia-strettino) {
     .flex-che-ci-sta {
 	.this-just-in {
 	    display: none;

@@ -10,7 +10,6 @@
     margin: 5px;
     .articolo-di-quelli {
         img {
-            width: 100%;
             object-fit: cover;
         }
         h3 {
@@ -22,15 +21,18 @@
 @media screen and (max-width:base-vars.$width-molto-stretta) {
     .hic-sunt-contenutos .griglia-minore-con-tutto {
 	grid-template-columns: 1fr;
+	background-color: lightgray;
 	.articolo-di-quelli {
 	    height: 100px;
 	    width: 100%;
 	    border-style: solid;
 	    border-color: solid;
-	    border-width: 2px;
+	    border-width: 1px;
+	    border-color: darkgray;
+	    background-color: white;
 	    display: flex;
-	    img {
-		flex-basis: 80px;
+	    .wrap-4-3 {
+		flex-basis: 120px;
 		flex-grow: 0;
 		height: 100%;
 		// width: auto;

@@ -38,24 +38,34 @@ body {
   background-color: white;
 }
 .hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso {
-  background-color: lightgreen;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 0;
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 3;
   grid-column-end: 3;
-  aspect-ratio: 4/3;
 }
-.hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
-  background-color: lightblue;
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso {
   border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 0;
-  aspect-ratio: 4/3;
+  border-color: black;
+  border-width: 1px;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso h3, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso h3 {
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  /* boh */
+  text-shadow: 2px 2px 2px black;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso .wrap-4-3 img, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso .wrap-4-3 img {
+  z-index: 0;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso .wrap-4-3 .edgelord, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso .wrap-4-3 .edgelord {
+  z-index: 1;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso .wrap-4-3 .foglord, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso .wrap-4-3 .foglord {
+  z-index: 2;
+}
+.hic-sunt-contenutos .cima-de-griglia .coso-quello-grosso .wrap-4-3 .lower, .hic-sunt-contenutos .cima-de-griglia .altro-meno-grosso .wrap-4-3 .lower {
+  z-index: 3;
 }
 
 @media screen and (max-width: 800px) {
@@ -68,6 +78,41 @@ body {
   background-color: white;
 }
 
+.fame-di-account {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #e8e8e8;
+  border-color: #888888;
+  border-style: solid;
+  border-width: 1px;
+}
+.fame-di-account h3 {
+  font-weight: bold;
+}
+.fame-di-account button {
+  background-color: #8888ff;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: large;
+}
+.fame-di-account h3, .fame-di-account button {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 90%;
+}
+
 .flex-che-ci-sta {
   display: flex;
   flex-direction: row;
@@ -77,19 +122,22 @@ body {
    * va nell'apposito scss */
 }
 .flex-che-ci-sta .this-just-in {
-  flex-basis: 120px;
+  flex-basis: 200px;
   flex-grow: 1;
+  flex-shrink: 1;
 }
 .flex-che-ci-sta .hic-sunt-contenutos {
-  flex-basis: 450px;
+  flex-basis: 360;
   flex-grow: 3;
+  flex-shrink: 2;
 }
 .flex-che-ci-sta .spam-a-lato {
-  flex-basis: 120px;
-  flex-grow: 1;
+  flex-basis: 240;
+  flex-grow: 2;
+  flex-shrink: 1;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .flex-che-ci-sta .this-just-in {
     display: none;
   }
@@ -112,7 +160,6 @@ body {
   margin: 5px;
 }
 .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
-  width: 100%;
   object-fit: cover;
 }
 .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli h3 {
@@ -122,17 +169,20 @@ body {
 @media screen and (max-width: 600px) {
   .hic-sunt-contenutos .griglia-minore-con-tutto {
     grid-template-columns: 1fr;
+    background-color: lightgray;
   }
   .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli {
     height: 100px;
     width: 100%;
     border-style: solid;
     border-color: solid;
-    border-width: 2px;
+    border-width: 1px;
+    border-color: darkgray;
+    background-color: white;
     display: flex;
   }
-  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli img {
-    flex-basis: 80px;
+  .hic-sunt-contenutos .griglia-minore-con-tutto .articolo-di-quelli .wrap-4-3 {
+    flex-basis: 120px;
     flex-grow: 0;
     height: 100%;
   }
@@ -245,14 +295,37 @@ body {
   filter: invert(0);
 }
 
+/* grazie mille a
+ * https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+ * per tutto il codice che ti ho fottuto
+ */
+.dame-tu-mail {
+  width: 100%;
+  max-width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.dame-tu-mail .corpus-dame-tu {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dame-tu-mail .corpus-dame-tu .name {
+  flex-grow: 1;
+  flex-basis: 60px;
+}
+.dame-tu-mail .corpus-dame-tu .email {
+  flex-grow: 3;
+  flex-basis: 90px;
+}
+.dame-tu-mail .corpus-dame-tu button {
+  flex-grow: 1;
+  flex-basis: 70px;
+  background-color: lightgreen;
+}
+
 .wrap-16-9 {
   position: relative;
-}
-.wrap-16-9:before {
-  display: block;
-  height: 0;
-  content: "";
-  padding-top: 56.25%;
 }
 .wrap-16-9 .inner {
   width: 100%;
@@ -264,9 +337,79 @@ body {
   bottom: 0;
   object-fit: cover;
 }
+.wrap-16-9 .lower {
+  position: absolute;
+  bottom: 0;
+}
+.wrap-16-9 .edgelord {
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+.wrap-16-9 .foglord {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 1s;
+}
+.wrap-16-9 .foglord:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.wrap-16-9:before {
+  display: block;
+  height: 0;
+  content: "";
+  padding-top: 56.25%;
+}
 
 .wrap-4-3 {
   position: relative;
+}
+.wrap-4-3 .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+.wrap-4-3 .lower {
+  position: absolute;
+  bottom: 0;
+}
+.wrap-4-3 .edgelord {
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+.wrap-4-3 .foglord {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 1s;
+}
+.wrap-4-3 .foglord:hover {
+  background-color: rgba(0, 0, 0, 0.25);
 }
 .wrap-4-3:before {
   display: block;
@@ -274,8 +417,11 @@ body {
   content: "";
   padding-top: 75%;
 }
-.wrap-4-3 .inner {
-  text-align: center;
+
+.wrap-square {
+  position: relative;
+}
+.wrap-square .inner {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -285,9 +431,32 @@ body {
   bottom: 0;
   object-fit: cover;
 }
-
-.wrap-square {
-  position: relative;
+.wrap-square .lower {
+  position: absolute;
+  bottom: 0;
+}
+.wrap-square .edgelord {
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+.wrap-square .foglord {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 1s;
+}
+.wrap-square .foglord:hover {
+  background-color: rgba(0, 0, 0, 0.25);
 }
 .wrap-square:before {
   display: block;
@@ -295,27 +464,16 @@ body {
   content: "";
   padding-top: 100%;
 }
-.wrap-square .inner {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  object-fit: cover;
-}
 
-.riga-articoli .header-riga-articoli h3::before {
-  content: "Kentaro Miura";
-  color: white;
-  background-image: url("imagos/svg/file.svg");
-  height: 300px;
+.riga-articoli .header-riga-articoli h2 {
   width: 300px;
+  border-style: solid;
+  boreder-color: black;
+  border-width: 5px 0 0 0;
 }
 .riga-articoli .body-riga-articoli {
   display: grid;
+  grid-column-gap: 5px;
   grid-template-columns: repeat(3, 1fr);
 }
 .riga-articoli .body-riga-articoli img {
@@ -357,22 +515,14 @@ body {
 }
 
 .spam-a-lato {
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.spam-a-lato a {
-  text-decoration: none;
-  color: black;
-}
-.spam-a-lato a:hover {
-  color: white;
-  background-color: black;
+.spam-a-lato .spammino {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .this-just-in {

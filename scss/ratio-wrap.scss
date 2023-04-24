@@ -1,62 +1,74 @@
-.wrap-16-9 {
+// sono pienamente consapevole di aver creato un mostro
+@mixin ratio-wrap {
     position: relative;
+    .inner {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+    }
+    // per le didascalie
+    .lower {
+	position: absolute;
+	bottom: 0;
+    }
+    .edgelord {
+	width: 100%;
+	height: 60%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9));
+    }
+    .foglord {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0);
+	transition: background 1s;
+    }
+    .foglord:hover {
+	background-color: rgba(0,0,0,0.25);
+    }
+    // arriverà il giorno del cloudlord
+}
+
+.wrap-16-9 {
+    @include ratio-wrap;
     &:before {
 	display: block;
 	height: 0;
 	content: "";
 	padding-top: calc((9 / 16) * 100%);
     }
-    .inner {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	object-fit: cover;
-    }
 }
 
 
 .wrap-4-3 {
-    position: relative;
+    @include ratio-wrap;
     &:before {
 	display: block;
 	height: 0;
 	content: "";
 	padding-top: calc((3 / 4) * 100%);
     }
-    .inner {
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	object-fit: cover;
-    }
 }
 
 .wrap-square {
-    position: relative;
+    @include ratio-wrap;
     &:before {
 	display: block;
 	height: 0;
 	content: "";
 	padding-top: 100%;
-    }
-    .inner {
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	object-fit: cover;
     }
 }

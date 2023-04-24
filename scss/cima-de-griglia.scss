@@ -10,16 +10,36 @@
     row-gap: 4px;
     background-color: white;
     .coso-quello-grosso {
-	@include placehold-box.placehold-box($color: lightgreen, $margin: 0);
 	grid-row-start: 1;
 	grid-column-start: 1;
 	grid-row-end: 3;
 	grid-column-end: 3;
-	aspect-ratio: 4 / 3;
     }
-    .altro-meno-grosso {
-	@include placehold-box.placehold-box($color: lightblue, $margin: 0);
-	aspect-ratio: 4 / 3;
+    .coso-quello-grosso, .altro-meno-grosso {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	h3 {
+	    color: white;
+	    font-size: large;
+	    font-weight: bold;
+	    /* boh */
+	    text-shadow: 2px 2px 2px black;
+	}
+	.wrap-4-3{
+	    img {
+		z-index: 0;
+	    }
+	    .edgelord {
+		z-index: 1;
+	    }
+	    .foglord {
+		z-index: 2;
+	    }
+	    .lower {
+		z-index: 3;
+	    }
+	}
     }
 }
 

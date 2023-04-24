@@ -1,16 +1,12 @@
 @use "placehold-box";
-.spam-a-lato {
-    @include placehold-box.placehold-box;
 
+.spam-a-lato {
     display: flex;
     flex-direction: column;
     align-items: center;
-    a {
-	text-decoration: none;
-	color:black;
-    }
-    a:hover {
-	color:white;
-	background-color: black;
+    .spammino {
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
     }
 }
